@@ -1,0 +1,42 @@
+@media (max-width:875px) {
+footer{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 60px;
+  
+    button{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;  
+        img{
+            width: 30px;
+            height: 30px;
+        }
+    }
+    button:hover{
+        color: #FFE031;
+    }
+      
+    
+}
+}
+
+.index{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: #FFE031;
+    
+   img{
+    // width: 200px;
+    // height: 220px;
+    // margin-left: 150px;
+    width: 70%;
+    height: 40%;
+    object-fit: contain;
+    margin-top: 180px;
+    margin-left: 50px;
+   }
+}
