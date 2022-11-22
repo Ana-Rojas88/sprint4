@@ -8,27 +8,60 @@ import { auth } from "../firebase/firebaseConfig";
 import Register from "../componentes/LoginAndRegister/Register";
 import Login from "../componentes/LoginAndRegister/Login";
 import Index from "../componentes/Index";
-
+import { useDispatch, useSelector } from "react-redux";
+import Spinner from "react-bootstrap/Spinner";
+import { actionLoginAsync } from "../redux/actions/UserActions";
 
 const Router = () => {
-  const [cheking, setCheking] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(undefined);
+  const [check, setCheck] = useState(true);
+  const userStore = useSelector((store) => store.userStore);
+  const dispatch = useDispatch()
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user?.uid) {
         setIsLoggedIn(true);
+        if (Object.entries(userStore).length === 0) {
+          const {
+            displayName,
+            email,
+            phoneNumber,
+            accessToken,
+            photoURL,
+            uid,
+          } = user.auth.currentUser;
+          dispatch(
+            actionLoginAsync({
+              name: displayName,
+              email,
+              accessToken,
+              phoneNumber,
+              avatar: photoURL,
+              uid,
+              error: false,
+            })
+          );
+        }
+  
 
       } else {
         setIsLoggedIn(false);
       }
-      setCheking(false);
-    });
-  }, [setIsLoggedIn, setCheking]);
+      setCheck(false)
+    
+    }
 
-  if (cheking) {
-    return <h2>Cargando....</h2>;
-  }
+    );
+  }, [setIsLoggedIn, dispatch, userStore]);
+
+  // if (check) {
+  //   return (
+  //     <Spinner animation="border" role="status">
+  //       <span className="visually-hidden">Loading...</span>
+  //     </Spinner>
+  //   );
+  // }
 
   return (
     <BrowserRouter>

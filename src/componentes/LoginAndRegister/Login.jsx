@@ -6,8 +6,10 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Swal from "sweetalert2";
-import { actionLoginAsync } from "../../redux/actions/UserActions";
+import { actionLoginAsync, loginProviderAsync } from "../../redux/actions/UserActions";
 import "./style.scss"
+import { login } from "../../services/dates";
+import './style.scss';
 
 const schema = yup.object({
   email: yup
@@ -42,14 +44,19 @@ const Login = () => {
     }
   };
 
+  const handleLoginGoogle = (provider) => {
+    dispatch(loginProviderAsync(provider))
+  }
+
+
   return (
-    <div className='containerRegister'>
+    <div className="containerRegister">
       <h1>Sing in</h1>
       <Form onSubmit={handleSubmit(onSubmit)}>
-      <label>
+        <label>
           EMAIL <br />
           <input type="email"
-           autoComplete="off"
+            autoComplete="off"
             {...register("email")} />
           <hr />
         </label>
@@ -57,18 +64,35 @@ const Login = () => {
         <label>
           PASSWORD <br />
           <input type="password"
-          autoComplete="off"
+            autoComplete="off"
             {...register("password")} />
           <hr />
         </label>
         <p>{errors.password?.message}</p>
 
-        <Button variant="warning" type="submit" className="mt-3 mb-3">
-          Iniciar Sesión
+        <Button variant="warning" type="submit" class="btn btn-primary">
+          Log In
         </Button>
+
       </Form>
-      <Link to="/Register">Create new account</Link>
-    </div>
+      <div className="sesionRedes">
+      <h3>Login with</h3><br />
+        {login.map((provider, index) => (
+          <img
+            key={index}
+            src={provider.image}
+            alt={provider.name}
+            style={{ width: "30px", cursor: "pointer", marginRight:"20px" }}
+            onClick={() => {
+              handleLoginGoogle(provider.provider);
+            }}
+          />
+        ))} <br />
+         <Link className="linkRegister" to="/Register">Create new account</Link>
+      </div>
+     
+      </div>
+    
   )
 }
 

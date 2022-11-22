@@ -1,87 +1,12 @@
-.header {
-    width: 100%;
-    height: 275px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 10px;
-  
-
-    .title {
-        span {
-            color: #FFE031;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 10px;
-            line-height: 12px;
-        }
-    }
-
-    .navbar {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        height: 180px;
-        padding: 5px;
-
-        &__img {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-
-            .imgMenu {
-                width: 200px;
-                height: 80px;
-                border-radius: 10px;
-            }
-
-            .imgDelivery {
-                width: 120px;
-                height: 80px;
-                border-radius: 10px;
-            }
-        }
-
-        h3 {
-            font-size: 18px;
-            font-weight: 300;
-            line-height: 16px;
-            letter-spacing: 0em;
-        }
-
-        .menuFood {
-            display: flex;
-            justify-content: space-around;
-
-            button {
-                border-radius: 5px;
-                width: 106px;
-                height: 32px;
-                border: none;
-                background: #F2F2F2;
-                color: #6C6C6C;
-                cursor: pointer;
-            }
-
-            button:hover {
-                background-color: #FFE031;
-                color: #6C6C6C;
-
-            }
-        }
-
-    }
-}
-
 .main {
     width: 100%;
-    height: 520px;
-    
+    height: 350px;
+    overflow: scroll;
 
-    .card {
+    .cardHome {
         display: flex;
-        padding: 20px;
+        flex-direction: row;
+        padding: 10px;
 
         img {
             width: 159px;
@@ -91,9 +16,10 @@
         }
 
         .info {
+            width: 50%;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 5px;
             margin-left: 10px;
             color: #414141;
 
@@ -103,41 +29,328 @@
 
 .search {
     width: 100%;
-    height: 485px;
+    height: 655px;
     padding: 10px;
+    font-size: 1.2em;
 
     &__input {
         width: 100%;
-        height: 40px;
+        height: 45px;
         border-radius: 10px;
-        display: flex; 
+        display: flex;
         background-color: #F2F2F2;
         margin-bottom: 10px;
+        font-size: 20px;
+        margin-top: 10px;
 
         input {
+            width: 100%;
             display: flex;
             border: none;
             background-color: transparent;
             align-items: center;
             margin-left: 2px;
+            outline: none;
+        }
+
+        button {
+            border: none;
+            background-color: transparent;
         }
 
         img {
             width: 20px;
             height: 20px;
-            margin-top: 12px;
+            margin-top: 11px;
             margin-left: 12px;
         }
     }
-    &__list{
-        span{
+
+    &__list {
+        span {
             color: #414141;
 
         }
-        ul{
+
+        ul {
             color: #A7A7A7;
             margin-top: 10px;
-
         }
     }
+
+    .infoSearch {
+        width: 100%;
+        height: 500px;
+
+        .cardSearch {
+            display: flex;
+
+            .image {
+                width: 70px;
+                height: 70px;
+                margin: 5px;
+                border-radius: 12px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 12px;
+                    object-fit: cover;
+                }
+            }
+
+            p {
+                margin-top: 5px;
+                line-height: 1.5em;
+            }
+        }
+    }
+}
+
+.infoRestaurant {
+    width: 100%;
+    height: 700px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+
+    .Restaurant {
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+
+        .logoRestaurant {
+            display: flex;
+            justify-content: center;
+
+            span {
+                font-size: 10px;
+
+                img {
+                    width: 15px;
+                }
+            }
+
+            img {
+                width: 100px;
+                height: 70px;
+                object-fit: contain;
+            }
+
+            span {
+                width: 100px;
+                margin-left: 5px;
+                color: red;
+                font-size: 30px;
+                font-weight: 600;
+            }
+        }
+
+        .cardRestaurant {
+            display: flex;
+            flex-direction: row;
+            padding: 10px;
+            justify-content: center;
+            width: 95%;
+
+            img {
+                width: 190px;
+                height: 150px;
+                border-radius: 15px;
+                clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+            }
+
+            .info {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                margin-left: 10px;
+                color: #414141;
+
+            }
+        }
+    }
+
+
+    .cardFood {
+        width: 95%;
+        height: 450px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+
+        .food {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 200px;
+            height: 180px;
+            text-align: center;
+            margin-top: 30px;
+            text-align: left;
+
+            h4 {
+                color: rgb(41, 40, 40);
+            }
+
+            span {
+                color: #6C6C6C;
+            }
+
+            .imgFood {
+                width: 200px;
+                height: 150px;
+                border-radius: 12px;
+                display: flex;
+    
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 12px;
+                }
+            }
+
+        }
+
+    }
+}
+
+.menuFood {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    height: 70px;
+    width: 95%;
+
+
+    button {
+        border-radius: 5px;
+        width: 150px;
+        height: 40px;
+        border: none;
+        background: #F2F2F2;
+        color: #6C6C6C;
+        cursor: pointer;
+
+    }
+
+    button:hover {
+        background-color: #FFE031;
+        color: #6C6C6C;
+
+    }
+}
+
+.cardDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: 400px;
+
+    span {
+        position: relative;
+        z-index: 2;
+        margin-top: 30px;
+        margin-left: 10px;
+
+        img {
+            width: 15px;
+        }
+    }
+
+    .imageDetails {
+        width: 100%;
+        height: 280px;
+        background-color: #F2F2F2;
+        border-bottom: 5px;
+        position: absolute;
+        z-index: 1;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        color: #414141;
+        padding: 10px;
+        letter-spacing: -0.3px;
+        line-height: 20px;
+        position: relative;
+        z-index: 2;
+        margin-top: 220px;
+    }
+
+    .counter_price {
+        margin-top: 180px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+
+        .counter {
+            width: 40%;
+            height: 60px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            gap: 20px;
+            background-color: #d6d4d4;
+            border-radius: 10px;
+
+            button {
+                font-size: 30px;
+                border: none;
+                background-color: transparent;
+            }
+
+            h4 {
+               margin-top: 15px;
+            }
+        }
+
+        p {
+            width: 55%;
+            height: 60px;
+            padding: 5px;
+            background-color: #FFE031;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            h4{
+                margin-top: 10px;
+            }
+        }
+
+    }
+
+}
+
+.perfil{
+    width: 100%;
+    height: 100%;
+}
+.btnsPerfil{
+    width: 100%;
+    height: 650px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+ 
 }

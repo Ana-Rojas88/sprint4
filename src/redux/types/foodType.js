@@ -1,0 +1,12 @@
+export const foodTypes = {
+    FOOD_GET: 'FOOD_GET',
+    FOOD_ADD: 'FOOD_ADD',
+    FOOD_FILTERED: 'FOOD_FILTERED'
+}
+
+export const restaurantTypes = {
+    RESTAURANT_GET: 'RESTAURANT_GET',
+    RESTAURANT_ADD: 'RESTAURANT_ADD',
+    RESTAURANT_FILTERED: 'RESTAURANT_FILTERED'
+}
+

@@ -96,12 +96,9 @@ const Register = () => {
        <hr />
     </label>
         <p>{errors.repeatPassword?.message}</p>
-       
-        <Button variant="warning" type="submit">
-          Registrarse
-        </Button>
+        <Button className="buttonRegister" type="submit">Sing In</Button>
       </Form>
-      <Link to="/Login">Log in</Link>
+      <Link className="linkLogin" to="/Login">Log in</Link>
     </div>
   );
 };
