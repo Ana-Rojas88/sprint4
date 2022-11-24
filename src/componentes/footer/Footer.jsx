@@ -1,15 +1,15 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { actionLogoutAsync } from '../../redux/actions/UserActions';
+// import { actionLogoutAsync } from '../../redux/actions/UserActions';
 import './style.scss'
 
 const Footer = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const onCloseSession = () => {
-      dispatch(actionLogoutAsync());
-    }
+  // const dispatch = useDispatch();
+  // const onCloseSession = () => {
+  //     dispatch(actionLogoutAsync());
+  //   }
 
   const filterFooter = () =>{
     navigate('/search');

@@ -1,12 +1,14 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { actionAddRestaurantAsync } from '../../redux/actions/restaurantAction';
+import { actionAddRestaurantAsync } from '../../../../redux/actions/restaurantAction';
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { fileUpLoad  } from "../../services/fileUpLoad";
-import { category, restaurantList } from "../../services/dates";
+import { fileUpLoad  } from "../../../../services/fileUpLoad";
+import { category, restaurantList } from "../../../../services/dates";
 import { Button, FloatingLabel, Form } from "react-bootstrap";
+import { useNavigate } from 'react-router-dom';
+
 
 const schema = yup.object({
     name: yup.string().required("Debe ingresar el restaurante"),
@@ -32,14 +34,19 @@ const AddRestaurant = () => {
           category: data.category,
           time: data.time,
           before: data.before,
-          image: image,
+          image
         };
         console.log(newRestaurant);
         dispatch(actionAddRestaurantAsync(newRestaurant));
       };
-
+      const navigate = useNavigate();
+      const returnRestaurants = () =>{
+          navigate('/adminRestaurant');
+        }
+    
   return (
     <div className="p-5">
+ <span onClick={returnRestaurants}><img src="https://i.ibb.co/wdsNjML/Backreturn.png" alt="Backreturn" /></span>
     <h1>Agregar un nuevo Restaurante</h1>
     <Form onSubmit={handleSubmit(onSubmit)}>
       {restaurantList.map((item, index) => {

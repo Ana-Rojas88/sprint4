@@ -27,7 +27,38 @@ export const restaurantList = [
         name: "image",
     },
 ];
-
+export const foodList = [
+    {
+        label: "Nombre del restaurante",
+        type: "text",
+        name: "idRestaurant",
+    },
+    {
+        label: "Categoría",
+        type: "select",
+        name: "category",
+    },
+    {
+        label: "Nombre de la comida",
+        type: "textarea",
+        name: "name",
+    },
+    {
+        label: "Coloque una descripción de la comida",
+        type: "textarea",
+        name: "description",
+    },
+    {
+        label: "Precio",
+        type: "number",
+        name: "price",
+    },
+    {
+        label: "Imagen",
+        type: "file",
+        name: "image",
+    },
+];
 export const category = [
  
     {
@@ -52,7 +83,7 @@ export const category = [
 export const login = [
     {
       name: "google",
-      image: "https://assets.stickpng.com/images/5847f9cbcef1014c0b5e48c8.png",
+      image: "https://play-lh.googleusercontent.com/aFWiT2lTa9CYBpyPjfgfNHd0r5puwKRGj2rHpdPTNrz2N9LXgN_MbLjePd1OTc0E8Rl1",
       provider: google,
     },
     {

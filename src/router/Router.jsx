@@ -15,7 +15,7 @@ import { actionLoginAsync } from "../redux/actions/UserActions";
 const Router = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(undefined);
   const [check, setCheck] = useState(true);
-  const userStore = useSelector((store) => store.userStore);
+  const userStore = useSelector((store) => store.user);
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -43,25 +43,25 @@ const Router = () => {
             })
           );
         }
-  
+
 
       } else {
         setIsLoggedIn(false);
       }
       setCheck(false)
-    
+
     }
 
     );
   }, [setIsLoggedIn, dispatch, userStore]);
 
-  // if (check) {
-  //   return (
-  //     <Spinner animation="border" role="status">
-  //       <span className="visually-hidden">Loading...</span>
-  //     </Spinner>
-  //   );
-  // }
+  if (check) {
+    return (
+      <Spinner animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>
+    );
+  }
 
   return (
     <BrowserRouter>
@@ -73,7 +73,7 @@ const Router = () => {
           <Route path="/" element={<Index />} />
         </Route>
         <Route element={<PrivateRouter isAutentication={isLoggedIn} />}>
-          <Route path="/*" element={<DashboardRouter />} />
+          <Route path="/*" element={<DashboardRouter isAutentication={isLoggedIn} />} />
         </Route>
       </Routes>
     </BrowserRouter>

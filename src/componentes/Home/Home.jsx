@@ -14,8 +14,6 @@ const Home = () => {
   const { restaurant } = useSelector((store) => store.restaurantStore);
   const { food } = useSelector((store) => store.foodStore);
  
-  console.log(food);
-
   const navigate = useNavigate();
 
   useEffect(() => {

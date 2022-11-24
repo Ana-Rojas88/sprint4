@@ -47,7 +47,7 @@ export const actionGetFoodAsync = () =>{
         }
     }
 
-    const actionAddFoodSync = (food) =>{
+    const actionAddFoodSync = (food) => {
         return {
             type: foodTypes.FOOD_ADD,
             payload: food,

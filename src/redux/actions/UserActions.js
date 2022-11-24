@@ -52,10 +52,12 @@ import {
     return (dispatch) => {
       signInWithPopup(auth, provider)
         .then((result) => {
-          const { displayName, accessToken, photoURL, phoneNumber, email } = result.user;
-          console.log(result.user)
+          const user = result.user;
+          console.log(user);
+          const { displayName, accessToken, photoURL, phoneNumber } = user.auth.currentUser;
+          // console.log(result.user)
           dispatch(actionLoginSync({
-            email,
+            email: user.email,
             name: displayName,
             accessToken,
             avatar: photoURL,
