@@ -28,7 +28,7 @@ const AddFood = () => {
       });
       const onSubmit = async (data) => {
         const image = await fileUpLoad(data.image[0]);
-        const newRestaurant = {
+        const newFood = {
           name: data.name,
           category: data.category,
           idRestaurant: data.idRestaurant,
@@ -36,8 +36,9 @@ const AddFood = () => {
           description: data.description,
           image
         };
-        console.log(newRestaurant);
-        dispatch(actionAddFoodAsync(newRestaurant));
+        console.log(newFood);
+        dispatch(actionAddFoodAsync(newFood));
+        navigate('/home');
       };
     
     const navigate = useNavigate();
@@ -94,7 +95,7 @@ const AddFood = () => {
       })}
 
       <Button variant="warning" type="submit" className="mb-3">
-        Agregar Restaurante
+        Agregar Comida
       </Button>
     </Form>
   </div>

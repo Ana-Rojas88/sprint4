@@ -1,4 +1,4 @@
-import { addDoc, collection, getDocs, where,query } from "firebase/firestore";
+import { addDoc, collection, getDocs, doc, where,query, deleteDoc } from "firebase/firestore";
 import { dataBase } from "../../firebase/firebaseConfig";
 import { foodTypes } from "../types/foodType";
 
@@ -109,4 +109,25 @@ export const actionGetFoodAsync = () =>{
       };
       
 
-     
+      export const actionDeleteFoodAsync =(food) => {
+        return  async (dispatch) => {
+            const foodRef = doc(dataBase, collectionName, food.id)
+            try {
+                await deleteDoc(foodRef);
+                dispatch(actionDeleteFoodSync(food))
+            } catch (error) {
+                console.log(error);
+                dispatch(actionDeleteFoodSync({
+                    error: true,
+                    errorMessage: error.message
+                }))
+            }        
+        }
+    }
+    
+    const actionDeleteFoodSync = (food) => {
+        return {
+            type: foodTypes.FOOD_DELETE,
+            payload: {id: food.id}
+        }
+    }

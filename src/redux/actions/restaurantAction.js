@@ -1,4 +1,4 @@
-import { addDoc, collection, getDocs, where,query } from "firebase/firestore";
+import { addDoc, collection, getDocs, doc, deleteDoc, where,query } from "firebase/firestore";
 import { dataBase } from "../../firebase/firebaseConfig";
 import { restaurantTypes } from "../types/foodType";
 
@@ -86,4 +86,27 @@ const actionFilterRestaurantSync = (restaurant) => {
         },
     };
 };
+
+export const actionDeleteRestaurantAsync =(restaurant) => {
+    return  async (dispatch) => {
+        const restaurantRef = doc(dataBase, collectionRestaurant, restaurant.id)
+        try {
+            await deleteDoc(restaurantRef);
+            dispatch(actionDeleteRestaurantSync(restaurant))
+        } catch (error) {
+            console.log(error);
+            dispatch(actionDeleteRestaurantSync({
+                error: true,
+                errorMessage: error.message
+            }))
+        }        
+    }
+}
+
+const actionDeleteRestaurantSync = (restaurant) => {
+    return {
+        type: restaurantTypes.RESTAURANT_DELETE,
+        payload: {id: restaurant.id}
+    }
+}
 

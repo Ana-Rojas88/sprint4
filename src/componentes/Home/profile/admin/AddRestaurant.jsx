@@ -38,6 +38,7 @@ const AddRestaurant = () => {
         };
         console.log(newRestaurant);
         dispatch(actionAddRestaurantAsync(newRestaurant));
+        navigate('/home');
       };
       const navigate = useNavigate();
       const returnRestaurants = () =>{

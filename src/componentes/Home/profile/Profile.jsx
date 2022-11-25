@@ -3,9 +3,10 @@ import { useDispatch, useSelector} from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { actionLogoutAsync } from '../../../redux/actions/UserActions';
 import Footer from '../../footer/Footer';
-import './style.scss'
+import './style.scss';
 
 const Profile = () => {
+  
 const navigate = useNavigate();
 const user = useSelector((store) => store.user);
 

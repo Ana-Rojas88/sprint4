@@ -55,7 +55,6 @@ import {
           const user = result.user;
           console.log(user);
           const { displayName, accessToken, photoURL, phoneNumber } = user.auth.currentUser;
-          // console.log(result.user)
           dispatch(actionLoginSync({
             email: user.email,
             name: displayName,

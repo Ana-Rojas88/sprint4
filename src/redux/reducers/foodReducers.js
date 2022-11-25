@@ -1,4 +1,4 @@
-import { foodTypes, restaurantTypes } from "../types/foodType";
+import { foodTypes, orderTypes, restaurantTypes } from "../types/foodType";
 
 const initialState = {
     food: [],
@@ -21,6 +21,13 @@ switch (action.type) {
                     ...state,
                     food: action.payload.food,
                 };
+                case foodTypes.FOOD_DELETE:
+            return{
+                ...state,
+                food: state.food.filter((food) => 
+                    food.id !== action.payload.id
+                ) 
+            }
 
     default:
         return state;
@@ -49,6 +56,13 @@ switch (action.type) {
                     ...state,
                     restaurant: action.payload.restaurant,
                 };
+                case restaurantTypes.RESTAURANT_DELETE:
+                    return{
+                        ...state,
+                        restaurant: state.restaurant.filter((restaurant) => 
+                            restaurant.id !== action.payload.id
+                        ) 
+                    }
         
 
     default:
@@ -56,3 +70,25 @@ switch (action.type) {
 }
 
 };
+
+
+const orderState = {
+    order: []
+}
+
+export const orderReducer = (state = orderState, action) => {
+    switch (action.type) {
+        case orderTypes.ORDER_ADD:
+            return {
+                ...state,
+                order: [...state.order, action.payload],
+            };
+        case orderTypes.ORDER_GET:
+            return {
+                ...state,
+                order: action.payload.order
+            };
+        default:
+            return state;
+    }
+}

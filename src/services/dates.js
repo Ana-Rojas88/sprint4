@@ -30,7 +30,7 @@ export const restaurantList = [
 export const foodList = [
     {
         label: "Nombre del restaurante",
-        type: "text",
+        type: "textarea",
         name: "idRestaurant",
     },
     {

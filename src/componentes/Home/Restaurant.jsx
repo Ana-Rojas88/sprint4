@@ -51,7 +51,7 @@ const Restaurant = () => {
                             <div className='logoRestaurant'>
                             <span onClick={home}><img src="https://i.ibb.co/wdsNjML/Backreturn.png" alt="Backreturn" /></span>
                             <img src="https://i.ibb.co/BTPGLQd/Logologorestaurant.png" alt="Logologorestaurant"/>
-                           <span>{restaurantInfo.name}</span>
+                           <h5>{restaurantInfo.name}</h5>
                             </div>
                         <div className='cardRestaurant'>
                             <img src={restaurantInfo.image} alt="restaurant" />
