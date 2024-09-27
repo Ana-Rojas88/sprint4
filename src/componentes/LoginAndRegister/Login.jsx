@@ -51,10 +51,11 @@ const Login = () => {
 
   return (
     <div className="containerRegister">
-      <h1>Sing in</h1>
+      <h2>Inicia Sesión</h2>
+      <div className="section_form">
       <Form onSubmit={handleSubmit(onSubmit)}>
         <label>
-          EMAIL <br />
+          CORREO <br />
           <input type="email"
             autoComplete="off"
             {...register("email")} />
@@ -62,7 +63,7 @@ const Login = () => {
         </label>
         <p>{errors.email?.message}</p>
         <label>
-          PASSWORD <br />
+          CONTRASEÑA <br />
           <input type="password"
             autoComplete="off"
             {...register("password")} />
@@ -71,26 +72,26 @@ const Login = () => {
         <p>{errors.password?.message}</p>
 
         <Button variant="warning" type="submit" class="btn btn-primary">
-          Log In
+          Iniciar
         </Button>
-
       </Form>
+      <Link className="linkRegister" to="/Register">Crear una cuenta</Link>
       <div className="sesionRedes">
-      <h3>Login with</h3><br />
+      <h3>Inicia sesión con</h3>
+      <div className="sesionRedes__icons">
         {login.map((provider, index) => (
           <img
             key={index}
             src={provider.image}
             alt={provider.name}
-            style={{ width: "30px", cursor: "pointer", marginRight:"20px" }}
             onClick={() => {
               handleLoginGoogle(provider.provider);
             }}
           />
-        ))} <br />
-         <Link className="linkRegister" to="/Register">Create new account</Link>
+        ))}
+       </div>
       </div>
-     
+      </div>
       </div>
     
   )

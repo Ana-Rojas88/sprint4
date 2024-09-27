@@ -66,39 +66,41 @@ const Register = () => {
 
   return (
     <div className='containerRegister'>
-      <h2>Create account</h2>
+      <h2>Crear Cuenta</h2>
+      <div className="section_form">
       <Form onSubmit={handleSubmit(onSubmit)}>
         <label>
-          NAME <br />
+          NOMBRE <br />
           <input type="text"
             {...register("name")} />
           <hr />
         </label>
         <p>{errors.name?.message}</p>
         <label>
-          EMAIL <br />
+          CORREO <br />
           <input type="email"
             {...register("email")} />
           <hr />
         </label>
         <p>{errors.email?.message}</p>
         <label>
-          PASSWORD <br />
+          CONTRASEÑA <br />
           <input type="password"
             {...register("password")} />
           <hr />
         </label>
         <p>{errors.password?.message}</p>
         <label>
-       CONFIRME PASSWORD <br />
+       CONFIRMAR CONTRASEÑA <br />
      <input type="password" 
        {...register("repeatPassword")}/>
        <hr />
     </label>
         <p>{errors.repeatPassword?.message}</p>
-        <Button className="buttonRegister" type="submit">Sing In</Button>
+        <Button  variant="warning" class="btn btn-primary" type="submit">Registrar</Button>
       </Form>
-      <Link className="linkLogin" to="/Login">Log in</Link>
+      <p><em>¿Ya tienes una cuenta? </em><Link className="linkLogin" to="/Login">Iniciar sesión</Link></p>
+    </div>
     </div>
   );
 };
