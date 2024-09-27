@@ -6,7 +6,6 @@ import Register from './LoginAndRegister/Register'
 const App = () => {
   return (
     <div>
-        
         <Search />
     </div>
   )

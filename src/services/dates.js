@@ -83,12 +83,12 @@ export const category = [
 export const login = [
     {
       name: "google",
-      image: "https://play-lh.googleusercontent.com/aFWiT2lTa9CYBpyPjfgfNHd0r5puwKRGj2rHpdPTNrz2N9LXgN_MbLjePd1OTc0E8Rl1",
+      image: "https://www.imagensempng.com.br/wp-content/uploads/2023/05/278-4.png",
       provider: google,
     },
     {
       name: "facebook",
-      image: "https://logodownload.org/wp-content/uploads/2014/09/facebook-logo-3-1.png",
+      image: "https://cdn.icon-icons.com/icons2/2201/PNG/512/facebook_logo_square_icon_134009.png",
       provider: facebook,
     },
   ];
