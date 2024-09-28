@@ -7,6 +7,7 @@
   gap: 1rem;
   margin-bottom: 1rem;
 
+
   h2 {
     font-family: Roboto;
     font-size: 2.5rem;
@@ -25,8 +26,7 @@
     padding: 2rem 4rem 2rem 4rem;
     border-radius: 50px;
     background: #fcfbfb;
-    box-shadow: 20px 20px 60px #bebebe,
-                  -20px -20px 60px #ffffff;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
     form {
       display: flex;
       flex-direction: column;
@@ -57,107 +57,40 @@
         text-align: center;
       }
     }
- 
   }
-  .sesionRedes{
+  .sesionRedes {
     margin-top: 0.5rem;
-    .sesionRedes__icons img{
-        width: 3rem;
-        height: 3rem;
-        border-radius: 50%;
-       }
+    .sesionRedes__icons img {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+    }
   }
-
 }
 
 @media (max-width: 875px) {
   .containerRegister {
-    font-family: "Roboto";
     max-width: 100%;
-    max-height: 100vh;
-    display: flex;
-    pad: 10px;
-    flex-direction: column;
-    padding: 10px;
-
-    h1 {
-      margin-top: 20px;
-      text-align: center;
-    }
-
+    gap: 3rem;
     h2 {
-      font-size: 30px;
-      font-weight: 600;
-      line-height: 28px;
-      letter-spacing: 0em;
-      color: #414141;
-      margin-top: 20px;
-      margin-left: 10px;
+      font-size: 2rem;
+      margin-top: 3rem;
     }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      padding: 10px;
-      width: 90%;
-      height: 65%;
-      font-size: 12px;
-      border: none;
+    .section_form {
       box-shadow: none;
-      border-radius: none;
+      width: 100%;
+      height: 100vh;
+      border-radius: 0%;
+      padding: 2rem;
+      gap: 3rem;
       background-color: #ffffff;
-
-      label {
-        color: #a7a7a7;
-
-        input {
-          width: 100%;
-          height: 30px;
-          border: none;
-          outline: none;
-          color: #414141;
-          font-size: 16px;
-          background-color: transparent;
+      form {
+        padding: 0.5rem;
+        button{
+            margin-top: 1rem;
         }
       }
-
-      button {
-        background: #ffe031;
-        border-radius: 10px;
-        height: 45px;
-        border-radius: 10px;
-        border: none;
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 16px;
-        letter-spacing: 0em;
-        text-align: center;
-      }
-
-      .buttonRegister {
-        padding: 20px;
-      }
-    }
-
-    .linkLogin {
-      color: black;
-      text-decoration: none;
-      text-align: center;
-      margin-top: 20px;
-      cursor: pointer;
-      font-size: 20px;
-    }
-  }
-
-  .sesionRedes {
-    width: 200px;
-    height: 100px;
-    margin-left: 150px;
-    text-align: center;
-
-    .linkRegister {
-      color: black;
-      text-decoration: none;
+      
     }
   }
 }

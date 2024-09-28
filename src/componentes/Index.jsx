@@ -5,7 +5,7 @@ import '../componentes/footer/style.scss'
 const Index = () => {
     return (
         <div className='index'>
-            <Link to="/Login">
+            <Link className='index__link' to="/Login">
                 <img src="https://i.ibb.co/rtQqyrf/Logocart.png" alt="Logocart" />
             </Link>
 

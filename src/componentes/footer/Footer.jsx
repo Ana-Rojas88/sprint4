@@ -28,10 +28,10 @@ const Footer = () => {
 
     return (
         <footer>
-            <button onClick={home}><img src="https://i.ibb.co/d5KFZD9/Svg-1.png" alt="Home" border="0" /></button>
-            <button onClick={filterFooter}><img src="https://i.ibb.co/syQ2PvC/Svg-2.png" alt="Search" border="0" /></button>
-            <button onClick={order}><img src="https://i.ibb.co/M8QdhCR/Svg-3.png" alt="Time" border="0" /></button>
-            <button onClick={profile}><img src="https://i.ibb.co/GP9rycb/Svg-4.png" alt="Sesión" border="0" /></button>
+            <button onClick={home}><img src="https://i.ibb.co/d5KFZD9/Svg-1.png" alt="Home" /></button>
+            <button onClick={filterFooter}><img src="https://i.ibb.co/syQ2PvC/Svg-2.png" alt="Search" /></button>
+            <button onClick={order}><img src="https://i.ibb.co/M8QdhCR/Svg-3.png" alt="Time" /></button>
+            <button onClick={profile}><img src="https://i.ibb.co/GP9rycb/Svg-4.png" alt="Sesión" /></button>
 
 
         </footer>

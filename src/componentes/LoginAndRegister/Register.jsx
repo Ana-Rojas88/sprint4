@@ -99,7 +99,7 @@ const Register = () => {
         <p>{errors.repeatPassword?.message}</p>
         <Button  variant="warning" class="btn btn-primary" type="submit">Registrar</Button>
       </Form>
-      <p><em>¿Ya tienes una cuenta? </em><Link className="linkLogin" to="/Login">Iniciar sesión</Link></p>
+      <p><em>¿Ya tienes una cuenta? </em> <br /> <Link className="linkLogin" to="/Login">Iniciar sesión</Link></p>
     </div>
     </div>
   );
