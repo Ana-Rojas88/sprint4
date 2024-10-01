@@ -1,370 +1,417 @@
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10rem;
+}
 .main {
-    width: 100%;
-    height: 350px;
-    overflow: scroll;
-
-    .cardHome {
-        display: flex;
-        flex-direction: row;
-        padding: 10px;
-
-        img {
-            width: 159px;
-            height: 106px;
-            border-radius: 15px;
-            clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
-        }
-
-        .info {
-            width: 50%;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            margin-left: 10px;
-            color: #414141;
-
-        }
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  .cardHome {
+    display: flex;
+    gap: 0.5rem;
+    img {
+      width: 18rem;
+      height: 13rem;
+      border-radius: 15px;
+      clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
     }
+
+    .infoMain {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      color: #414141;
+    }
+  }
 }
 
 .search {
+  width: 100%;
+  height: 655px;
+  padding: 10px;
+  font-size: 1.2em;
+
+  &__input {
     width: 100%;
-    height: 655px;
-    padding: 10px;
-    font-size: 1.2em;
+    height: 45px;
+    border-radius: 10px;
+    display: flex;
+    background-color: #f2f2f2;
+    margin-bottom: 10px;
+    font-size: 20px;
+    margin-top: 10px;
 
-    &__input {
-        width: 100%;
-        height: 45px;
-        border-radius: 10px;
-        display: flex;
-        background-color: #F2F2F2;
-        margin-bottom: 10px;
-        font-size: 20px;
-        margin-top: 10px;
+    input {
+      width: 100%;
+      display: flex;
+      border: none;
+      background-color: transparent;
+      align-items: center;
+      margin-left: 2px;
+      outline: none;
+    }
 
-        input {
-            width: 100%;
-            display: flex;
-            border: none;
-            background-color: transparent;
-            align-items: center;
-            margin-left: 2px;
-            outline: none;
-        }
+    button {
+      border: none;
+      background-color: transparent;
+    }
 
-        button {
-            border: none;
-            background-color: transparent;
-        }
+    img {
+      width: 20px;
+      height: 20px;
+      margin-top: 11px;
+      margin-left: 12px;
+    }
+  }
+
+  &__list {
+    span {
+      color: #414141;
+    }
+
+    ul {
+      color: #a7a7a7;
+      margin-top: 10px;
+    }
+  }
+
+  .infoSearch {
+    width: 100%;
+    height: 500px;
+
+    .cardSearch {
+      display: flex;
+
+      .image {
+        width: 70px;
+        height: 70px;
+        margin: 5px;
+        border-radius: 12px;
 
         img {
-            width: 20px;
-            height: 20px;
-            margin-top: 11px;
-            margin-left: 12px;
+          width: 100%;
+          height: 100%;
+          border-radius: 12px;
+          object-fit: cover;
         }
+      }
+
+      p {
+        margin-top: 5px;
+        line-height: 1.5em;
+      }
     }
-
-    &__list {
-        span {
-            color: #414141;
-
-        }
-
-        ul {
-            color: #A7A7A7;
-            margin-top: 10px;
-        }
-    }
-
-    .infoSearch {
-        width: 100%;
-        height: 500px;
-
-        .cardSearch {
-            display: flex;
-
-            .image {
-                width: 70px;
-                height: 70px;
-                margin: 5px;
-                border-radius: 12px;
-
-                img {
-                    width: 100%;
-                    height: 100%;
-                    border-radius: 12px;
-                    object-fit: cover;
-                }
-            }
-
-            p {
-                margin-top: 5px;
-                line-height: 1.5em;
-            }
-        }
-    }
+  }
 }
 
 .infoRestaurant {
-    width: 100%;
-    height: 700px;
-    margin-top: 30px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 10px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 
-    .Restaurant {
-        width: 95%;
+  .Restaurant {
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    .logoRestaurant {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      .arrow {
+        width: 3rem;
+        height: 3rem;
+      }
+      .imgLogo {
+        width: 5rem;
+        height: 5rem;
+        margin-left: 3.5rem;
+      }
+
+      h4 {
+        color: red;
+        font-size: 2rem;
+        font-weight: 600;
+      }
+    }
+
+    .cardRestaurant {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      img {
+        width: 12rem;
+        height: 10rem;
+        border-radius: 15px;
+        clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
+      }
+      .info {
+        width: 50%;
         display: flex;
         flex-direction: column;
-
-        .logoRestaurant {
-            display: flex;
-        
-
-            span {
-                font-size: 10px;
-                
-                img {
-                    width: 15px;
-                }
-            }
-
-            img {
-                margin-left: 40px;
-                width: 100px;
-                height: 70px;
-                object-fit: contain;
-            }
-
-            h5 {
-                width: 250px;
-                margin-left: 5px;
-                color: red;
-                font-size: 25px;
-                font-weight: 600;
-            }
-        }
-
-        .cardRestaurant {
-            display: flex;
-            flex-direction: row;
-            padding: 10px;
-            justify-content: center;
-            width: 95%;
-
-            img {
-                width: 190px;
-                height: 150px;
-                border-radius: 15px;
-                clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
-            }
-
-            .info {
-                width: 50%;
-                display: flex;
-                flex-direction: column;
-                margin-left: 10px;
-                color: #414141;
-
-            }
-        }
+        color: #414141;
+      }
     }
+  }
 
+  .cardFood {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2rem;
+    height: auto;
+    .food {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      h4 {
+        width: 60%;
+        color: rgb(41, 40, 40);
+      }
+      span {
+        color: #6c6c6c;
+        font-weight: 500;
+      }
 
-    .cardFood {
-        width: 95%;
-        height: 450px;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 30px;
-
-        .food {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            width: 200px;
-            height: 180px;
-            text-align: center;
-            margin-top: 30px;
-            text-align: left;
-
-            h4 {
-                color: rgb(41, 40, 40);
-            }
-
-            span {
-                color: #6C6C6C;
-            }
-
-            .imgFood {
-                width: 200px;
-                height: 150px;
-                border-radius: 12px;
-                display: flex;
-    
-                img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    border-radius: 12px;
-                }
-            }
-
+      .imgFood {
+        width: 12rem;
+        height: 10rem;
+        border-radius: 12px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 12px;
         }
-
+      }
     }
+  }
 }
 
 .menuFood {
     display: flex;
-    flex-direction: row;
-    gap: 20px;
-    height: 70px;
-    width: 95%;
-
+    justify-content: center;
+    gap: 3rem;
 
     button {
-        border-radius: 5px;
-        width: 150px;
-        height: 40px;
-        border: none;
-        background: #F2F2F2;
-        color: #6C6C6C;
-        cursor: pointer;
-
+      border-radius: 5px;
+      border: none;
+      background: #f2f2f2;
+      color: #6c6c6c;
+      cursor: pointer;
     }
-
     button:hover {
-        background-color: #FFE031;
-        color: #6C6C6C;
-
+      background-color: #ffe031;
+      color: #535353;
     }
-}
+  }
+
 
 .cardDetails {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  height: 400px;
+
+  span {
+    position: relative;
+    z-index: 2;
+    margin-top: 30px;
+    margin-left: 10px;
+
+    img {
+      width: 15px;
+    }
+  }
+
+  .imageDetails {
     width: 100%;
-    height: 400px;
+    height: 280px;
+    background-color: #f2f2f2;
+    border-bottom: 5px;
+    position: absolute;
+    z-index: 1;
 
-    span {
-        position: relative;
-        z-index: 2;
-        margin-top: 30px;
-        margin-left: 10px;
-
-        img {
-            width: 15px;
-        }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
     }
+  }
 
-    .imageDetails {
-        width: 100%;
-        height: 280px;
-        background-color: #F2F2F2;
-        border-bottom: 5px;
-        position: absolute;
-        z-index: 1;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-bottom-right-radius: 10px;
-            border-bottom-left-radius: 10px;
-        }
-    }
-
-    .info {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        color: #414141;
-        padding: 10px;
-        letter-spacing: -0.3px;
-        line-height: 20px;
-        position: relative;
-        z-index: 2;
-        margin-top: 220px;
-    }
-
-    .counter_price {
-        margin-top: 160px;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-
-        .counter {
-            width: 40%;
-            height: 60px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            gap: 20px;
-            background-color: #d6d4d4;
-            border-radius: 10px;
-
-            button {
-                font-size: 30px;
-                border: none;
-                background-color: transparent;
-            }
-
-            h4 {
-               margin-top: 15px;
-            }
-        }
-
-        .form {
-            width: 55%;
-            height: 60px;
-            padding: 5px;
-            background-color: #FFE031;
-            border-radius: 10px;
-            display: flex;
-            justify-content: space-between;
-            text-align: center;
-            h4{
-                margin-top: 10px;
-            }
-            button{
-                font-size: 20px;
-                border: none;
-                background-color: transparent;
-            }
-        }
-
-    }
-
-}
-.cardOrder{
-display: flex;
-flex-direction: column;
-gap: 10px;
-padding: 20px;
-width: 100%;
-height: 600px;
-overflow-y: scroll;
-.order{
-display: flex;
-flex-direction: row;
-gap: 10px;
-img{
-    width: 250px;
-    height: 140px;
-}
-.infoOrder{
+  .info {
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
+    color: #414141;
+    padding: 10px;
+    letter-spacing: -0.3px;
+    line-height: 20px;
+    position: relative;
+    z-index: 2;
+    margin-top: 220px;
+    background-color: #ffe031;
+  }
+
+  .counter_price {
+    margin-top: 160px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    .counter {
+      width: 40%;
+      height: 60px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      gap: 20px;
+      background-color: #d6d4d4;
+      border-radius: 10px;
+
+      button {
+        font-size: 30px;
+        border: none;
+        background-color: transparent;
+      }
+
+      h4 {
+        margin-top: 15px;
+      }
+    }
+
+    .form {
+      width: 55%;
+      height: 60px;
+      padding: 5px;
+      background-color: #ffe031;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      h4 {
+        margin-top: 10px;
+      }
+      button {
+        font-size: 20px;
+        border: none;
+        background-color: transparent;
+      }
+    }
+  }
 }
+.cardOrder {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  width: 100%;
+  height: 600px;
+  overflow-y: scroll;
+  .order {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    img {
+      width: 250px;
+      height: 140px;
+    }
+    .infoOrder {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }
+@media (max-width: 875px) {
+  .home {
+    gap: 1rem;
+    .main {
+      padding: 0.5rem;
+      .cardHome {
+        img {
+          width: 10rem;
+          height: 9rem;
+        }
+        .infoMain {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  .infoRestaurant {
+    
+    .Restaurant {
+      display: flex;
+      padding: 1rem;
+      flex-direction: column;
+      .logoRestaurant {
+        display: flex;
+        align-items: center;
+        padding: 1rem;
+        .arrow {
+          width: 2rem;
+          height: 2rem;
+        }
+        .imgLogo {
+          width: 4rem;
+          height: 4rem;
+          margin-left: 0.5rem;
+        }
+  
+        h4 {
+          color: red;
+          font-size: 2rem;
+          font-weight: 600;
+        }
+      }
+  
+      .cardRestaurant {
+        gap: 0.5rem;
+        img {
+          width: 12rem;
+          height: 10rem;
+        }
+      }
+    }
+  
+    .cardFood {
+        gap: 1rem;
+      .food {
+        h4 {
+          width: 80%;
+          color: rgb(41, 40, 40);
+        }
+        span {
+          color: #6c6c6c;
+          font-weight: 500;
+        }
+  
+        .imgFood {
+          width: 20rem;
+          height: 10rem;
+        }
+      }
+    }
+  }
+  .menuFood {
+    gap: 1rem;
+
+    button {
+      font-size: 0.7rem;
+    }
+  }
 }

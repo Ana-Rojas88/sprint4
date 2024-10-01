@@ -1,92 +1,67 @@
 .header {
+  width: 100%;
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 10px;
+  margin-bottom: 60px;
+
+  .itemCarousel {
     width: 100%;
-    height: 260px;
+    padding: 1rem;
+    .imageCarousel {
+      width: 100%;
+      height: 18rem;
+    }
+  }
+  .navbar {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 10px;
-    margin-bottom: 60px;
+    gap: 0.7rem;
+    height: 16rem;
+    padding: 1rem;
 
-    .title {
-        display: flex;
-        flex-direction: row;
-        gap: 5px;
-        width: 100%;
-        height: 80px;
-        img{
-            width: 30px;
-            height: 50px;
-        }
-        span {
-            color: #FFE031;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 13px;
-            line-height: 12px;
-        }
-
+    h3 {
+      font-size: 1.5rem;
+      letter-spacing: 0.1em;
     }
 
+    .menuFood {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+
+      button {
+        border-radius: 5px;
+        border: none;
+        background: #f2f2f2;
+        color: #6c6c6c;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #ffe031;
+        color: #535353;
+      }
+    }
+  }
+}
+@media (max-width: 875px) {
+  .header {
+    .itemCarousel {
+      padding: 1rem;
+      .imageCarousel {
+        height: 8rem;
+      }
+    }
     .navbar {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        width: 100%;
-        height: 220px;
-        padding: 5px;
-        &__img {
-            display: flex;
-            flex-direction: row;
-            gap: 40px;
-            height: 90px;
-            width: 95%;
-            overflow-x: scroll;
+      .menuFood {
+        gap: 1rem;
 
-            .imgMenu {
-                width: 260px;
-                height: 80px;
-                border-radius: 10px;
-            }
-
-            .imgDelivery {
-                width: 200px;
-                height: 80px;
-                border-radius: 10px;
-            }
+        button {
+          font-size: 0.7rem;
         }
-
-        h3 {
-            font-size: 18px;
-            font-weight: 300;
-            line-height: 16px;
-            letter-spacing: 0em;
-        }
-
-        .menuFood {
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-            height: 70px;
-            width: 95%;
-
-
-            button {
-                border-radius: 5px;
-                width: 150px;
-                height: 40px;
-                border: none;
-                background: #F2F2F2;
-                color: #6C6C6C;
-                cursor: pointer;
-
-            }
-
-            button:hover {
-                background-color: #FFE031;
-                color: #6C6C6C;
-
-            }
-        }
-
+      }
     }
+  }
 }

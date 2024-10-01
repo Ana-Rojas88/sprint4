@@ -26,7 +26,7 @@ const Home = () => {
   }, [dispatch])
 
   return (
-    <>
+    <div className='home'>
       <Header />
       <main className='main'>
 
@@ -34,7 +34,7 @@ const Home = () => {
           restaurant.map((restaurant, index) => (
             <article key={index} className='cardHome' onClick={()=>{navigate(`/restaurant/${restaurant.name}`)}}>
               <img src={restaurant.image} alt="Restaurant" />
-              <div className='info'>
+              <div className='infoMain'>
                 <h3>{restaurant.name}</h3>
                 <span>⭐⭐⭐⭐⭐</span>
                 <span>Before you {restaurant.before}</span>
@@ -50,7 +50,7 @@ const Home = () => {
       </main>
   
       <Footer />
-    </>
+    </div>
   )
 }
 
