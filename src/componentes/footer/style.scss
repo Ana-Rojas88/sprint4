@@ -1,25 +1,23 @@
-@media (max-width: 875px) {
-  footer {
-    display: flex;
-    justify-content: space-around;
-    height: 4rem;
-    padding: 0.5rem;
+footer {
+  display: flex;
+  justify-content: space-around;
+  height: 4rem;
+  padding: 0.5rem;
 
-    button {
-      border: none;
-      background-color: transparent;
-      padding: 0.5rem;
-      img {
-        width: 30px;
-        height: 30px;
-      }
-    }
-    button:hover{
-        cursor: pointer;
-        background-color: #ffe031;
+  button {
+    border: none;
+    background-color: transparent;
+    padding: 0.5rem;
+    img {
+      width: 30px;
+      height: 30px;
     }
   }
-
+  button:hover{
+      cursor: pointer;
+      background-color: #ffe031;
+      border-radius: 0.5rem;
+  }
 }
 
 .index {

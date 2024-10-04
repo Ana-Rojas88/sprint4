@@ -5,12 +5,11 @@ import {
   actionFilterFoodAsync,
   actionGetFoodAsync,
 } from "../../redux/actions/foodActions";
-import { category } from "../../services/dates";
-import { Button } from "react-bootstrap";
-import arrowIcon from "../../assets/atras.png"
-import cocinero from "../../assets/cocinero.png"
+import arrowIcon from "../../assets/atras.png";
+import cocinero from "../../assets/cocinero.png";
 import "./style.scss";
 import FilterButton from "../Header/FilterButton";
+import Footer from "../footer/Footer";
 
 const Restaurant = () => {
   const dispatch = useDispatch();
@@ -50,18 +49,19 @@ const Restaurant = () => {
     navigate("/home");
   };
   return (
+    <>
       <div className="infoRestaurant">
         {restaurantInfo ? (
           <section className="Restaurant">
             <div className="logoRestaurant">
-                <img 
+              <img
                 className="arrow"
                 onClick={home}
-                  src={arrowIcon}
-                  alt="Backreturn"
-                />
-              <img 
-              className="imgLogo"
+                src={arrowIcon}
+                alt="Backreturn"
+              />
+              <img
+                className="imgLogo"
                 src={cocinero}
                 alt="Logologorestaurant"
               />
@@ -70,19 +70,16 @@ const Restaurant = () => {
             <div className="cardRestaurant">
               <img src={restaurantInfo.image} alt="restaurant" />
               <div className="info">
-                <span>{restaurantInfo.name}</span>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
                   expedita consequatur architecto porro quod hic
                 </p>
-                <span>⭐⭐⭐⭐⭐</span>
               </div>
             </div>
           </section>
         ) : (
           <div>No hay información</div>
         )}
-          <FilterButton />
         <div className="cardFood">
           {filterFood && filterFood.length ? (
             filterFood.map((food, index) => (
@@ -105,6 +102,8 @@ const Restaurant = () => {
           )}
         </div>
       </div>
+      <Footer />
+    </>
   );
 };
 

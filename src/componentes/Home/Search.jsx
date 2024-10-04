@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { actionFilterAsync, actionGetFoodAsync } from '../../redux/actions/foodActions'
+import imgSearch from '../../assets/search.png'
 import Footer from '../footer/Footer'
 import './style.scss'
 
@@ -38,7 +39,7 @@ useEffect(() => {
         <>
             <section className='search'>
                 <form className='search__input' onSubmit={handleSubmit(onSearch)}>
-                    <button type='submit'><img src="https://i.ibb.co/syQ2PvC/Svg-2.png" alt="Search" /></button>
+                    <button type='submit'><img src={imgSearch} alt="Search" /></button>
                     <input type="search" placeholder='Search for a dish'
                         {...register('search', { required: true })}
                         onChange={restoreFood} />

@@ -33,7 +33,9 @@ const Home = () => {
         {restaurant && restaurant.length ? (
           restaurant.map((restaurant, index) => (
             <article key={index} className='cardHome' onClick={()=>{navigate(`/restaurant/${restaurant.name}`)}}>
+              <figure>
               <img src={restaurant.image} alt="Restaurant" />
+              </figure>
               <div className='infoMain'>
                 <h3>{restaurant.name}</h3>
                 <span>⭐⭐⭐⭐⭐</span>

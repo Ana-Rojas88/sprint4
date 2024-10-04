@@ -3,10 +3,13 @@ import { useDispatch, useSelector} from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { actionLogoutAsync } from '../../../redux/actions/UserActions';
 import Footer from '../../footer/Footer';
+import avatar from '../../../assets/usuario.png'
+import arrowIcon from "../../../assets/atras.png";
 import './style.scss';
 
 const Profile = () => {
   
+const [admim, setAdmim] = useState(false)
 const navigate = useNavigate();
 const user = useSelector((store) => store.user);
 
@@ -26,11 +29,10 @@ const accountEdit = () =>{
 }
 
 
-const [admim, setAdmim] = useState(true)
 
 const adminLogged = ()=>{
   if(user.email === "paola.torres281109@gmail.com"){
-   setAdmim(false)
+   setAdmim(true)
   }
 }
 
@@ -42,9 +44,11 @@ adminLogged();
 
 
   return (
+    <>
     <section className='perfil'>
+    <span onClick={()=>navigate('/home')}><img src={arrowIcon} alt="Backreturn" className='arrow'/></span>
       <div className='perfil__info'>
-          <img src={user.avatar} alt="Imagen de perfil" />
+      <img src={user.avatar ? user.avatar : avatar }alt="Imagen de perfil" />
           <span>{user.name}</span>
       </div>
      
@@ -56,10 +60,18 @@ adminLogged();
       <button>FAQ</button>
       <button>Support</button>
       <button onClick={onCloseSession}>Cerrar sesión</button>
-      <button  onClick={adminRestaurants} disabled={admim}>Administrator</button>
+      {
+        admim ? (
+          <button  onClick={adminRestaurants}>Administrator</button>
+        ) : (
+          <></>
+        )
+      }
+     
     </div>
-    <Footer />
     </section>
+    <Footer />
+    </>
   )
 }
 
