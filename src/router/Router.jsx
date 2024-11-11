@@ -11,6 +11,7 @@ import Index from "../componentes/Index";
 import { useDispatch, useSelector } from "react-redux";
 import Spinner from "react-bootstrap/Spinner";
 import { actionLoginAsync } from "../redux/actions/UserActions";
+import NoMatch from "../componentes/Home/NoMatch";
 
 const Router = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(undefined);
@@ -75,6 +76,7 @@ const Router = () => {
         <Route element={<PrivateRouter isAutentication={isLoggedIn} />}>
           <Route path="/*" element={<DashboardRouter isAutentication={isLoggedIn} />} />
         </Route>
+    
       </Routes>
     </BrowserRouter>
   );

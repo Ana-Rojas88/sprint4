@@ -8,12 +8,10 @@ import arrowIcon from "../../../assets/atras.png";
 import './style.scss';
 
 const Profile = () => {
-  
 const [admim, setAdmim] = useState(false)
 const navigate = useNavigate();
-const user = useSelector((store) => store.user);
+const  user = useSelector((store) => store.user);
 
-console.log(user.name);
   const dispatch = useDispatch();
   const onCloseSession = () => {
       dispatch(actionLogoutAsync());
@@ -49,7 +47,7 @@ adminLogged();
     <span onClick={()=>navigate('/home')}><img src={arrowIcon} alt="Backreturn" className='arrow'/></span>
       <div className='perfil__info'>
       <img src={user.avatar ? user.avatar : avatar }alt="Imagen de perfil" />
-          <span>{user.name}</span>
+          <p>{user.name}</p>
       </div>
      
     <div className='btnsPerfil'>

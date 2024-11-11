@@ -18,16 +18,18 @@ const DeleteFood = () => {
     navigate('/adminRestaurant');
 }
   return (
+    <>
+   <span onClick={adminRestaurant} className='m-4'><img src="https://i.ibb.co/wdsNjML/Backreturn.png" alt="Backreturn" /></span><br />
+   <h2 style={{textAlign:'center'}}>Comidas</h2>
     <div className='delete'>
-      <span onClick={adminRestaurant}><img src="https://i.ibb.co/wdsNjML/Backreturn.png" alt="Backreturn" /></span><br />
       {food && food.length ? (
         food.map((food, index) => (
           <article key={index} className='card'>
             <img src={food.image} alt="Restaurant" />
             <div className='info'>
-              <h6>{food.name}</h6>
-              <span>$ {food.price}</span>
-              <p>{food.idRestaurant} </p>
+              <h6>Nombre: {food.name}</h6>
+              <span>Precio: $ {food.price}</span>
+              <p>Restaurante: {food.idRestaurant} </p>
             </div>
             <button onClick={() => {
               dispatch(actionDeleteFoodAsync(food))
@@ -35,7 +37,7 @@ const DeleteFood = () => {
                 "Se ha eliminado con exito",
                 "success"
               )
-            }}>
+            }} className='btn btn-danger'>
               Delete
             </button>
           </article>
@@ -45,6 +47,7 @@ const DeleteFood = () => {
         <></>
       )}
     </div>
+    </>
   )
 }
 

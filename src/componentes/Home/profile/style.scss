@@ -3,12 +3,11 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-
   &__info {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 2rem;
+    padding-top: 0.5rem;
     img {
       width: 6rem;
       height: 6rem;
@@ -25,7 +24,7 @@
 }
 
 .btnsPerfil {
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
@@ -47,56 +46,72 @@
 .delete {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
   gap: 10px;
-  padding: 20px;
+  padding: 1rem;
   flex-wrap: wrap;
-
   .card {
-    width: 200px;
-    height: 230px;
+    width: 13rem;
+    height: 19rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    margin-left: 40px;
+    gap: 0.5rem;
+    padding: 0.3rem;
     img {
-      width: 200px;
-      height: 90px;
+      width: 12rem;
+      height: 6rem;
       object-fit: cover;
     }
 
-    .infoRestaurant {
+    .info {
       display: flex;
+      height: 10rem;
       flex-direction: column;
-
-      button {
-        height: 50px;
-        border: none;
-        background-color: rgb(240, 125, 125);
-      }
     }
   }
 }
 @media (max-width: 875px) {
-  .perfil {
-
+  .perfil {  
     span {
-      .arrow {
-       display: none;
+      width: 2rem;
+    height: 2rem;
+      .arrow{
+       width: 1rem;
+       height: 1rem;
       }
     }
     &__info {
       padding-top: 1rem;
+      height: 8rem;
+      img {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+      }
     }
   }
   .btnsPerfil {
-    height: 100vh;
     button {
       padding: 0.3rem 0.3rem 0.3rem 1rem;
       border: none;
       text-align: left;
       border-radius: 0.9rem;
       background-color: #f2f2f2;
+    }
+  }
+  .delete {
+    padding: 0.8rem;
+    .card {
+      width: 100%;
+      height: 19rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0.3rem;
+      img {
+        width: 100%;
+        height: 9rem;
+      }
     }
   }
 }

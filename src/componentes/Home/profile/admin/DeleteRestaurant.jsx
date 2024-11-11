@@ -18,8 +18,10 @@ const DeleteRestaurant = () => {
 }
 
   return (
+    <>
+     <span onClick={adminRestaurant}><img src="https://i.ibb.co/wdsNjML/Backreturn.png" alt="Backreturn" /></span><br />
+     <h2 style={{textAlign:'center'}}>Restaurantes</h2>
     <div className='delete'>
- <span onClick={adminRestaurant}><img src="https://i.ibb.co/wdsNjML/Backreturn.png" alt="Backreturn" /></span><br />
         {restaurant && restaurant.length ? (
           restaurant.map((restaurant, index) => (
             <article key={index} className='card'>
@@ -33,9 +35,7 @@ const DeleteRestaurant = () => {
                     Swal.fire(
                       "Se ha eliminado con exito",
                       "success"
-                    )      
-                    
-                 }}>
+                    )}} className='btn btn-danger'>
                   Delete
                 </button>
             </article>
@@ -46,6 +46,7 @@ const DeleteRestaurant = () => {
         )}
 
       </div>
+      </>
   )
 }
 
